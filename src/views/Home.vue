@@ -7,6 +7,10 @@
 <script>
 export default {
   name: 'home',
-  components: {}
+  components: {},
+  created() {
+    console.log(11);
+    debugger;
+  }
 };
 </script>

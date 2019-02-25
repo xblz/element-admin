@@ -33,7 +33,7 @@ class HttpRequest {
   interceptors(instance, url) {
     // 请求拦截
     instance.interceptors.request.use(
-      config => {
+      (config) => {
         // 添加loading
         if (!Object.keys(this.queue).length) {
           Loading.service({
@@ -46,18 +46,18 @@ class HttpRequest {
         this.queue[url] = true;
         return config;
       },
-      error => {
+      (error) => {
         return Promise.reject(error);
       }
     );
     // 响应拦截
     instance.interceptors.response.use(
-      res => {
+      (res) => {
         this.destroy(url);
         const { data, status } = res;
         return { data, status };
       },
-      error => {
+      (error) => {
         this.destroy(url);
         let errorInfo = error.response;
         if (!errorInfo) {

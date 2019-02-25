@@ -2,7 +2,6 @@
 module.exports = {
   productionSourceMap: false,
   devServer: {
-    port: 4000,
-    proxy: {}
+    port: 4000
   }
 };
