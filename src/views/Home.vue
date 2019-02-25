@@ -8,9 +8,6 @@
 export default {
   name: 'home',
   components: {},
-  created() {
-    console.log(11);
-    debugger;
-  }
+  created() {}
 };
 </script>
